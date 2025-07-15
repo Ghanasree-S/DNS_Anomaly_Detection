@@ -4,7 +4,7 @@
 
 This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dataset. It classifies DNS flows as **Benign** or **Anomalous** using a trained **Random Forest** classifier. The project includes a **Flask-based web interface** for uploading DNS log CSV files and viewing predictions.
 
----
+
 
 ## ⚙️ Features
 
@@ -15,7 +15,6 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
 - **Flask Web App**: Upload DNS logs and view prediction results in the browser.
 - **Confidence Score**: Displays anomaly probability for each predicted row.
 
----
 
 ## 🚀 How to Run
 
@@ -41,6 +40,8 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
 ```
   to upload and test DNS logs.
 
+  
+
 ## 🧠 How It Works
 
 - **Text Extraction**: Loads and concatenates all CSVs from the `CIRA-CIC-IDS2017` folder.
@@ -51,7 +52,7 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
   - `Normal` or `Anomaly`
   - Anomaly probability
 
----
+
 
 ## 🌐 API Endpoints
 
@@ -60,7 +61,7 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
 | `/`        | GET    | Homepage to upload DNS CSV files       |
 | `/upload`  | POST   | Handles file uploads and shows results |
 
----
+
 
 ## 🧪 Example Usage
 
@@ -71,7 +72,7 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
    - Predict whether each row is `Normal` or `Anomalous`
 3. View results in a styled HTML table with prediction confidence.
 
----
+
 
 ## 📁 Dataset
 
@@ -80,7 +81,7 @@ It includes attacks like **DDoS**, **PortScan**, and **Botnet** activity.
 
 > ⚠️ *Due to file size, consider testing with smaller CSVs during development.*
 
----
+
 
 ## ✅ Conclusion
 
