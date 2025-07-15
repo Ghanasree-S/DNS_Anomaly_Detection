@@ -18,13 +18,13 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
 
 ### 🚀 How to Run
 
-1. **Clone this repository**:
+1. Clone this repository:
    ```bash
    git clone https://github.com/Ghanasree-S/DNS_Anomaly_Detection.git
    ```
 2. Navigate into the project directory:
   ```bash
-   cd DNS_Anomaly_Detection
+  cd DNS_Anomaly_Detection
   ```
 3. Install required dependencies:
   ```bash
@@ -37,7 +37,7 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
 5. Open your browser and go to:
   ```bash
   http://127.0.0.1:5000/
-```
+   ```
   to upload and test DNS logs.
 
   
