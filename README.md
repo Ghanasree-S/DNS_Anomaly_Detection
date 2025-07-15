@@ -15,6 +15,13 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
 - **Flask Web App**: Upload DNS logs and view prediction results in the browser.
 - **Confidence Score**: Displays anomaly probability for each predicted row.
 
+## 📁 Dataset
+This project uses the CIRA-CIC-IDS2017 dataset, which contains real-world DNS logs from both benign and attack scenarios including DDoS, PortScan, and Botnet activities.
+To download,
+``` bash
+[CIRA-CIC-IDS2017 dataset on Kaggle](https://www.kaggle.com/datasets/chethuhn/network-intrusion-dataset)
+```
+
 
 ## 🚀 How to Run
 
@@ -71,14 +78,6 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
    - Sample 20 rows
    - Predict whether each row is `Normal` or `Anomalous`
 3. View results in a styled HTML table with prediction confidence.
-
-
-
-## 📁 Dataset
-
-The model is trained on the **CIRA-CIC-IDS2017** dataset, which contains real-world DNS logs from benign and attack scenarios.  
-It includes attacks like **DDoS**, **PortScan**, and **Botnet** activity.
-
 
 
 ## ✅ Conclusion
