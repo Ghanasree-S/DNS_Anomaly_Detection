@@ -1,13 +1,3 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\usepackage{hyperref}
-\usepackage{longtable}
-\geometry{margin=1in}
-\title{DNS Anomaly Detection Project}
-\author{Ghanasree S}
-\date{}
-
 \begin{document}
 
 \maketitle
