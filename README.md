@@ -1,79 +1,71 @@
-\begin{document}
+# DNS_Anomaly_Detection
 
-\maketitle
+## 🚨 Detecting Malicious DNS Traffic using Machine Learning
 
-\section*{Overview}
-This project focuses on detecting anomalies in DNS traffic using machine learning techniques. It leverages the CIRA-CIC-IDS2017 dataset and implements a Random Forest classifier to distinguish between benign and anomalous DNS queries. A Flask-based web application enables interactive CSV uploads and anomaly detection.
+This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dataset. It classifies DNS flows as **Benign** or **Anomalous** using a trained **Random Forest** classifier. The project includes a **Flask-based web interface** for uploading DNS log CSV files and viewing predictions.
 
-\section*{Features}
-\begin{itemize}
-    \item \textbf{Multi-CSV Loader:} Loads and merges DNS-related CSVs from the dataset.
-    \item \textbf{Data Cleaning:} Replaces infinite values and removes rows with missing data.
-    \item \textbf{Label Binarization:} Classifies traffic as \texttt{Benign} (1) or \texttt{Anomalous} (0).
-    \item \textbf{Random Forest Model:} Trained on cleaned data for robust detection.
-    \item \textbf{Web Interface:} Flask app allows file uploads and live predictions.
-    \item \textbf{Result Display:} Shows predictions with anomaly probabilities in a table format.
-\end{itemize}
+---
 
-\section*{Prerequisites}
-Install the required packages via:
-\begin{verbatim}
+## ⚙️ Features
+
+- **Dataset Loader**: Loads and merges multiple DNS CSV files.
+- **Data Cleaning**: Handles NaNs, infinite values, and whitespace issues.
+- **Binary Classification**: Detects anomalies by labeling flows as Benign (`1`) or Anomalous (`0`).
+- **Model Training**: Trains a `RandomForestClassifier` using `scikit-learn`.
+- **Flask Web App**: Upload DNS logs and view prediction results in the browser.
+- **Confidence Score**: Displays anomaly probability for each predicted row.
+
+---
+
+## 📦 Prerequisites
+
+Ensure the following libraries are installed:
+
+```bash
 pip install -r requirements.txt
-\end{verbatim}
-Or manually:
-\begin{verbatim}
-pip install pandas numpy scikit-learn flask joblib
-\end{verbatim}
+```
+## 🧠 How It Works
 
-\section*{Running the Project}
-\begin{enumerate}
-    \item Clone the repository:
-    \begin{verbatim}
-    git clone https://github.com/Ghanasree-S/DNS_Anomaly_Detection.git
-    cd DNS_Anomaly_Detection
-    \end{verbatim}
-    
-    \item Run the Flask app:
-    \begin{verbatim}
-    python app.py
-    \end{verbatim}
-    
-    \item Open your browser and visit:
-    \url{http://127.0.0.1:5000/}
-\end{enumerate}
+- **Text Extraction**: Loads and concatenates all CSVs from the `CIRA-CIC-IDS2017` folder.
+- **Data Cleaning**: Removes nulls and infinities, cleans column names.
+- **Label Encoding**: Maps `'BENIGN'` label to `1`, all others to `0`.
+- **Model Training**: Fits a balanced `RandomForestClassifier`.
+- **Prediction**: Samples 20 random rows from the uploaded file, predicts, and shows:
+  - `Normal` or `Anomaly`
+  - Anomaly probability
 
-\section*{Model Training}
-The \texttt{train.py} script:
-\begin{itemize}
-    \item Loads and merges DNS-related logs.
-    \item Cleans the dataset.
-    \item Converts the \texttt{Label} column into a binary class (\texttt{BENIGN} = 1, others = 0).
-    \item Trains a Random Forest classifier.
-    \item Saves the model as \texttt{dns\_anomaly\_detection\_model.pkl}.
-\end{itemize}
+---
 
-\section*{Web App Functionality}
-The \texttt{app.py} Flask script:
-\begin{itemize}
-    \item Accepts CSV uploads with DNS traffic.
-    \item Randomly selects 20 rows for prediction.
-    \item Predicts whether the traffic is normal or anomalous.
-    \item Displays results in a table with probability scores.
-\end{itemize}
+## 🌐 API Endpoints
 
-\section*{Sample Output Table}
-\begin{longtable}{|l|l|l|}
-\hline
-\textbf{Feature} & \textbf{Prediction} & \textbf{Anomaly Probability} \\
-\hline
-8.8.8.8, Port 53, ... & Anomaly & 0.87 \\
-\hline
-\end{longtable}
+| Endpoint   | Method | Description                            |
+|------------|--------|----------------------------------------|
+| `/`        | GET    | Homepage to upload DNS CSV files       |
+| `/upload`  | POST   | Handles file uploads and shows results |
 
-\section*{Dataset}
-The model uses DNS-related traffic logs from the \textbf{CIRA-CIC-IDS2017} dataset, covering various days of normal and attack traffic.
+---
 
-\section*{Conclusion}
-This project demonstrates how machine learning can be used to automatically detect DNS anomalies, assisting network security professionals in identifying potential threats in near real time.
+## 🧪 Example Usage
 
-\end{document}
+1. Upload a `.csv` file containing DNS logs from the UI.
+2. The app will:
+   - Clean the data
+   - Sample 20 rows
+   - Predict whether each row is `Normal` or `Anomalous`
+3. View results in a styled HTML table with prediction confidence.
+
+---
+
+## 📁 Dataset
+
+The model is trained on the **CIRA-CIC-IDS2017** dataset, which contains real-world DNS logs from benign and attack scenarios.  
+It includes attacks like **DDoS**, **PortScan**, and **Botnet** activity.
+
+> ⚠️ *Due to file size, consider testing with smaller CSVs during development.*
+
+---
+
+## ✅ Conclusion
+
+This project offers a practical tool to detect DNS anomalies using machine learning.  
+It's ideal for **cybersecurity students**, **researchers**, and **analysts** looking to identify malicious behavior in network traffic using a web-based ML solution.
