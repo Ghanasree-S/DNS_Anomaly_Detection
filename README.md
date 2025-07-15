@@ -1,4 +1,4 @@
-# DNS_Anomaly_Detection
+# DNS ANOMALY DETECTION
 
 ## 🚨 Detecting Malicious DNS Traffic using Machine Learning
 
