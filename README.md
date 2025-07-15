@@ -17,13 +17,30 @@ This project detects anomalies in DNS traffic using the **CIRA-CIC-IDS2017** dat
 
 ---
 
-## 📦 Prerequisites
+## 🚀 How to Run
 
-Ensure the following libraries are installed:
-
-```bash
-pip install -r requirements.txt
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/Ghanasree-S/DNS_Anomaly_Detection.git
+   ```
+2. Navigate into the project directory:
+  ```bash
+   cd DNS_Anomaly_Detection
+  ```
+3. Install required dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
+4. Run the Flask app:
+  ```bash
+  python app.py
+  ```
+5. Open your browser and go to:
+  ```bash
+  http://127.0.0.1:5000/
 ```
+  to upload and test DNS logs.
+
 ## 🧠 How It Works
 
 - **Text Extraction**: Loads and concatenates all CSVs from the `CIRA-CIC-IDS2017` folder.
